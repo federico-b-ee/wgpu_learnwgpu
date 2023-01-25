@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WGPU</title>
+    <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔴</text></svg>"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+<style>
+
+    #wasm{
+        width: 450px;
+        height: 400px;
+        margin: 0 auto;
+        border-style: solid;
+        border: double black 10px;
+        border-image: url("res/border.png") 20 20;
+    }
+    div.text{
+        font-family: 'Permanent Marker';
+        text-align: center;
+        font-size: xx-large;
+    }
+    
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    body {
+        background: repeating-linear-gradient(
+            145deg,
+            whitesmoke 0,
+            whitesmoke 3px,
+            white 2px,
+            white 15px
+        );
+    }
+
+</style>
+<body>
+    <div class="text">
+        <p>WASM + WGPU</p>
+    </div>
+
+    <div class="box" id="wasm"></div>
+
+    <br>
+
+    <div class="text" style="font-size: x-large;">
+        <p>-> Grab to change view</p>
+        <p>-> W/A/S/D to move</p>
+        <p>-> Press 1 and 2 to change the texture</p>
+        <p>-> Make sure the window is clicked</p>
+    </div>
+
+    <div class="text">
+        <p>My Approach following the tutorial:
+            <a href="https://sotrh.github.io/learn-wgpu/"> Learn Wgpu</a>
+        </p>
+    </div>
+
+
+    <div class="text">
+
+    </div>
+
+    <script type="module">
+        import init from "./wgpu_learnwgpu.js";
+        init().then(() => {
+            console.log("WASM Loaded");
+        });
+    </script>
+</body>
+
+</html>
+
