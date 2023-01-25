@@ -11,14 +11,19 @@ fn format_url(file_name: &str) -> reqwest::Url {
     let window = web_sys::window().unwrap();
     let location = window.location();
     let base = reqwest::Url::parse(&format!(
-        "{}/{}/{}",
-        location.origin().unwrap(),
-        "wgpu_learnwgpu", // added for github pages
-        option_env!("RES_PATH").unwrap_or("res"),
+        "{}/wgpu_learnwgpu/res/",
+        location.origin().unwrap()
     ))
     .unwrap();
     base.join(file_name).unwrap()
+
+    /* "{}/{}/{}",
+        location.origin().unwrap(),
+        "wgpu_learnwgpu", // added for github pages
+        option_env!("RES_PATH").unwrap_or("res"),
+    */
 }
+
 
 pub async fn load_string(file_name: &str) -> anyhow::Result<String> {
     cfg_if! {
