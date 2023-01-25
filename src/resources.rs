@@ -11,8 +11,9 @@ fn format_url(file_name: &str) -> reqwest::Url {
     let window = web_sys::window().unwrap();
     let location = window.location();
     let base = reqwest::Url::parse(&format!(
-        "{}/{}/",
+        "{}/{}/{}",
         location.origin().unwrap(),
+        "wgpu_learnwgpu", // added for github pages
         option_env!("RES_PATH").unwrap_or("res"),
     ))
     .unwrap();
